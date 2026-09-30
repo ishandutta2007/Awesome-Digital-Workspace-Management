@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 42px; fill: #ffffff; }
+    .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 400; font-size: 18px; fill: #94a3b8; }
+    .badge-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 13px; fill: #38bdf8; }
+    
+    /* Background wave animation */
+    @keyframes pulse-wave {
+      0% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+      50% { transform: scale(1.05) translate(-10px, 5px); opacity: 0.6; }
+      100% { transform: scale(1) translate(0, 0); opacity: 0.3; }
+    }
+    
+    /* Flow line animation */
+    @keyframes dash {
+      to { stroke-dashoffset: -40; }
+    }
+    
+    /* Node pulse */
+    @keyframes node-glow {
+      0%, 100% { r: 6px; opacity: 0.8; }
+      50% { r: 9px; opacity: 1; }
+    }
+
+    .bg-element { animation: pulse-wave 8s ease-in-out infinite; transform-origin: center; }
+    .flow-line { stroke-dasharray: 8, 8; animation: dash 2s linear infinite; }
+    .g-node { animation: node-glow 3s ease-in-out infinite; }
+  </style>
+
+  <!-- Background -->
+  <rect width="1200" height="350" fill="url(#bg-grad)" rx="16"/>
+
+  <!-- Dynamic / Animated Background Graphics (Kept low opacity & depth to not obscure text) -->
+  <g class="bg-element" opacity="0.4">
+    <circle cx="950" cy="175" r="140" fill="none" stroke="url(#accent-grad)" stroke-width="1.5" stroke-dasharray="4 8"/>
+    <circle cx="950" cy="175" r="90" fill="none" stroke="#818cf8" stroke-width="1" opacity="0.5"/>
+  </g>
+
+  <!-- Dynamic Network / Telemetry Flow (Right Side decorative element) -->
+  <g opacity="0.6" transform="translate(680, 50)">
+    <!-- Connecting flow lines -->
+    <path d="M 50 100 L 150 60 L 270 120 L 380 70" fill="none" stroke="#38bdf8" stroke-width="2" class="flow-line"/>
+    <path d="M 50 170 L 150 200 L 270 150 L 380 210" fill="none" stroke="#818cf8" stroke-width="2" class="flow-line"/>
+    <path d="M 150 60 L 150 200" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+    <path d="M 270 120 L 270 150" fill="none" stroke="#ffffff" stroke-opacity="0.2" stroke-width="1"/>
+
+    <!-- Dynamic Nodes -->
+    <circle cx="50" cy="100" r="6" fill="#38bdf8" class="g-node"/>
+    <circle cx="150" cy="60" r="6" fill="#818cf8" class="g-node" style="animation-delay: 0.5s;"/>
+    <circle cx="270" cy="120" r="6" fill="#c084fc" class="g-node" style="animation-delay: 1s;"/>
+    <circle cx="380" cy="70" r="6" fill="#38bdf8" class="g-node" style="animation-delay: 1.5s;"/>
+
+    <circle cx="50" cy="170" r="6" fill="#818cf8" class="g-node" style="animation-delay: 0.8s;"/>
+    <circle cx="150" cy="200" r="6" fill="#c084fc" class="g-node" style="animation-delay: 1.3s;"/>
+    <circle cx="270" cy="150" r="6" fill="#38bdf8" class="g-node" style="animation-delay: 1.8s;"/>
+    <circle cx="380" cy="210" r="6" fill="#818cf8" class="g-node" style="animation-delay: 0.3s;"/>
+  </g>
+
+  <!-- Foreground Main Card Container -->
+  <rect x="50" y="45" width="620" height="260" rx="12" fill="url(#card-grad)" stroke="#ffffff" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- Category Tag / Badge -->
+  <rect x="80" y="75" width="280" height="28" rx="14" fill="#38bdf8" fill-opacity="0.1" stroke="#38bdf8" stroke-opacity="0.3"/>
+  <text x="95" y="94" class="badge-text">🚀 AWESOME DIGITAL WORKSPACE</text>
+
+  <!-- Foreground Title & Subtitle (Always crisp & unobstructed) -->
+  <text x="80" y="155" class="title">Digital Workspace<tspan fill="url(#accent-grad)"> Management</tspan></text>
+  
+  <text x="80" y="200" class="subtitle">Curated Ecosystem for DEX, EUC Observability, VDI Analytics</text>
+  <text x="80" y="225" class="subtitle">&amp; Fleet Telemetry (SaaS Platforms &amp; Open-Source Solutions)</text>
+
+  <!-- Key Metrics / Feature Badges inside Card -->
+  <g transform="translate(80, 255)">
+    <rect x="0" y="0" width="130" height="26" rx="6" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="12" y="17" font-family="system-ui" font-size="11" fill="#e2e8f0">📊 DEX Analytics</text>
+
+    <rect x="140" y="0" width="130" height="26" rx="6" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="152" y="17" font-family="system-ui" font-size="11" fill="#e2e8f0">🖥️ VDI &amp; EUC Stack</text>
+
+    <rect x="280" y="0" width="140" height="26" rx="6" fill="#ffffff" fill-opacity="0.05" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="292" y="17" font-family="system-ui" font-size="11" fill="#e2e8f0">⚡ Endpoint Telemetry</text>
+  </g>
+</svg>
