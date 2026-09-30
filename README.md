@@ -48,9 +48,9 @@ The table below curates the leading enterprise DEX and EUC monitoring SaaS platf
 
 ## ⚡ Open-Source GitHub Projects & Monitoring Tools
 
-Community-curated open-source projects for endpoint telemetry, VDI monitoring, and workspace observability. Sorted by **GitHub Star Count (Descending)** ⬇️.
+Community-curated open-source projects for endpoint telemetry, VDI monitoring, and workspace observability. Sorted by **GitHub Stars_Count (Descending)** ⬇️.
 
-| Project Name 🛠️ | GitHub Stars ⭐ | Primary Workspace Category 🏷️ | Description & Use Case 📖 |
+| Project Name 🛠️ | GitHub_Stars ⭐ | Primary Workspace Category 🏷️ | Description & Use Case 📖 |
 | :--- | :---: | :--- | :--- |
 | **[Grafana](https://github.com/grafana/grafana)** | [![Grafana Stars](https://img.shields.io/github/stars/grafana/grafana?style=social&color=white)](https://github.com/grafana/grafana/stargazers) | Workspace Observability & Dashboards | Premier open-source visualization dashboard widely used to combine VDI metrics, endpoint telemetry, and user session logs. |
 | **[Prometheus](https://github.com/prometheus/prometheus)** | [![Prometheus Stars](https://img.shields.io/github/stars/prometheus/prometheus?style=social&color=white)](https://github.com/prometheus/prometheus/stargazers) | Telemetry & Metrics Collection | Systems monitoring and alerting toolkit serving as the backbone for custom endpoint & infrastructure observability pipelines. |
@@ -81,7 +81,7 @@ When assembling a custom open-source Digital Workspace Management stack:
 Contributions are highly encouraged! To add a SaaS platform or Open-Source project:
 1. Fork this repository. 🍴
 2. Create a new branch (`git checkout -b add-workspace-tool`). 🌿
-3. Update `README.md` maintaining table formatting, metrics, and star badges. 📝
+3. Update `README.md` maintaining table formatting, metrics, and Stars_Badges. 📝
 4. Open a Pull Request with details about the project. 🚀
 
 ---
